@@ -1,0 +1,17 @@
+/*
+Theme Name: Benchpress
+Description: Unskinned, semantic skin.
+Author: Phiveleven
+Author URI: http://phiveleven.com
+Version: 1.0
+
+License: WTFPL
+*/
+/* Pick a font or two from google.com/webfonts
+@import url(http://fonts.googleapis.com/css?family=Metrophobic);
+*/
+
+* { background:rgba(255,0,0,.1) }
+html, body { height:100%; padding:0; margin:0; font:100%/1.6 Metrophibic,sans-serif }
+
+header { display:block }
