@@ -2,17 +2,13 @@
   header('Content-Type: text/html; charset=utf-8');
   header('X-UA-Compatible: IE=edge,chrome=1');
 
+  import('config.php');
   $title = is_home()? bloginfo('title') : wp_title('', true);
   $description = bloginfo('description');
-  $keywords = '';
-  $webfonts = '';
   $stylesheet = bloginfo('stylesheet_url');
   $template_url = bloginfo('template_url');
   $atom_url = bloginfo('atom_url');
   $rss_url = bloginfo('rss2_url');
-
-  $logo_url = "$template_url/img/logo-main.png";
-
 ?><!DOCTYPE html>
 <title><?= $title ?></title>
 <meta name=description content="<?= $description  ?>" />
@@ -30,9 +26,8 @@
 <? wp_head() ?>
 <body><a name=top id=top></a>
 <header>
-  <img id=logo alt="<? bloginfo('title') ?>" src="<?= $logo_url ?>" />
   <nav><? array_map(function($page){
     echo "<a href=\"{$page->post_name}\">$page->post_title</a>";
-  }, get_pages()) ?></nav>
+  }, get_pages(array('sort_column'=>'menu_order'))) ?></nav>
 </header>
 <section id=main>
